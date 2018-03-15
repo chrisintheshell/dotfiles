@@ -70,12 +70,14 @@ export PAGER=less
 alias myip='curl ipinfo.io'                                                   # myip:         Public facing IP Address
 alias zless=$PAGER                                                            # zless:        Use $PAGER (less) for zless
 alias ls="ls -G"                                                              # ls:           Use colorized output with ls
+#alias ls="\gls --color=always -G"                                             # ls:           Use colorized output with Gnu ls
 alias log="~/scripts/logtodayone.rb"                                          # log:          Dayone script to submit log entries via CLI
 alias msync="rsync -vaNHAXx --fileflags --protect-decmpfs --force-change \
   --rsync-path=/opt/pkg/bin/rsync --stats -i"                                 # msync:        Rsync for files on macOS
 alias cu='sudo cu --nostop -l /dev/tty.KeySerial1'                            # cu:           My cu command for serial connections using Keyspan adapter
 alias vi='vim'                                                                # vi:           Use vim for vi
 alias stats='dshb'                                                            # stats:        Dispaly macOS system stats (cpu, mem, etc) using dshb
+alias ic='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'                 # ic:           Change directory to the iCloud Drive folder within the termal
 alias iperf='iperf3'                                                          # iperf:        Use iperf3 for iperf
 alias vmrun='/Applications/VMware\ Fusion.app/Contents/Library/vmrun'         # vmrun:        VMware's vmrun command
 alias python='/opt/pkg/bin/python3.6'                                         # python:       Use Python 3.6 as default python version

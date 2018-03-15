@@ -37,10 +37,10 @@ set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·
 " Set Color Scheme
 set background=dark
 colorscheme solarized
-"colorscheme solarized8_dark
+"colorscheme nord
 
 " Use italic font for code comments
-highlight Comment cterm=italic
+highlight Comment cterm=italic gui=italic
 
 " Change line number background color
 highlight LineNr ctermbg=8
@@ -63,3 +63,4 @@ let g:CommandTMaxFiles=400000
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tmuxline#enabled = 0
 let g:airline_theme='solarized'
+"let g:airline_theme='nord'
