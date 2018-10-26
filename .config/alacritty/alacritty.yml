@@ -366,3 +366,4 @@ key_bindings:
 
 # My custom key bindings
   - { key: Space, mods: Control, chars: "\x00" }
+    #  - { key: F11, command: { program: "wmctrl", args: ["-r", ":ACTIVE:", "-b", "toggle,fullscreen" ] } }

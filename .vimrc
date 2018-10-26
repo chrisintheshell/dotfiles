@@ -13,7 +13,7 @@ let mapleader=","
 filetype plugin indent on
 syntax on                       "Turn on syntax highlighting
 set shortmess=atI               "Disable welcome screen
-set clipboard=unnamed           "macOS pastboard using pbcopy/pbpaste
+set clipboard=unnamed           "macOS pasteboard using pbcopy/pbpaste
 set laststatus=2                "Required for VIM Airline
 set number                      "Line numbers are good
 set backspace=indent,eol,start  "Allow backspace in insert mode
@@ -51,6 +51,9 @@ highlight LineNr ctermbg=8
 
 "wrap lines"
 nmap <silent> <leader>w :set nowrap!<CR>
+
+"remap x to delete but not update default register"
+noremap x "_x
 
 " }}}
 
