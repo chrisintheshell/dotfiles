@@ -13,8 +13,7 @@ fi
 #  -------------------------
 
 #  Change prompt
-export PS1="\n| \w @ \h (\u) \n| => "
-export PS2="| => "
+export PS1="\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
 
 #   Set EDITOR(s)
 if { which vim 2> /dev/null  1> /dev/null ;}; then
@@ -29,6 +28,9 @@ export EDITOR FCEDIT HISTEDIT
 
 #  Set PAGER
 export PAGER=less
+
+## API Keys
+export MAC_ADDRESS_IO_API_KEY="at_GLZC0G2Jqq9BRPUkU5UtW72KuZM0B" # macaddress.io API key
 
 #   ------------------------
 #   Functions
@@ -67,7 +69,8 @@ export PAGER=less
 #  Aliases
 #  -------------------------
 
-alias myip='curl ipinfo.io'                                                   # myip:         Public facing IP Address
+alias my_drive='cd /Volumes/G-DRIVE'
+alias my_ip='curl ipinfo.io'                                                   # myip:         Public facing IP Address
 alias zless=$PAGER                                                            # zless:        Use $PAGER (less) for zless
 alias ls="ls -G"                                                              # ls:           Use colorized output with ls
 #alias ls="\gls --color=always -G"                                             # ls:           Use colorized output with Gnu ls
@@ -80,7 +83,11 @@ alias stats='dshb'                                                            # 
 alias ic='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'                 # ic:           Change directory to the iCloud Drive folder within the termal
 alias iperf='iperf3'                                                          # iperf:        Use iperf3 for iperf
 alias vmrun='/Applications/VMware\ Fusion.app/Contents/Library/vmrun'         # vmrun:        VMware's vmrun command
-alias python='/opt/pkg/bin/python3.6'                                         # python:       Use Python 3.6 as default python version
+#alias python='/opt/pkg/bin/python3.6'                                         # python:       Use Python 3.6 as default python version
 alias sshfw='TERM=xterm-256color ssh'                                         # sshfw:        Use xterm when connecting to some OS' (Junos) via SSH
 alias config='git --git-dir=/Users/cjones/.cfg/ --work-tree=/Users/cjones'    # config:       My dotfile configuration management using git
 alias sysinfo='/usr/local/bin/neofetch'                                       # sysinfo:      Display system information
+alias xhyve_ssh_fbsd12='sshfw 192.168.64.13'
+
+# Bash Completions
+#source ~/.bash_completion/alacritty

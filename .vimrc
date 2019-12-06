@@ -1,9 +1,9 @@
 " gui colors if running iTerm
-"if $TERM_PROGRAM =~ "iTerm"
-"  set termguicolors
-"  set t_8f=[38;2;%lu;%lu;%lum
-"  set t_8b=[48;2;%lu;%lu;%lum
-"endif
+if $TERM_PROGRAM =~ "iTerm"
+  set termguicolors
+  set t_8f=[38;2;%lu;%lu;%lum
+  set t_8b=[48;2;%lu;%lu;%lum
+endif
 
 " Change mapleader to ","
 let mapleader=","
@@ -20,7 +20,6 @@ set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
 set showmode                    "Show current mode down the bottom
-set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 set hidden                      "Hides buffers instead of closing
@@ -36,8 +35,8 @@ set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·
 
 " Set Color Scheme
 set background=dark
-colorscheme solarized
-"colorscheme nord
+"colorscheme solarized
+colorscheme material-monokai
 
 " Use italic font for code comments
 highlight Comment cterm=italic gui=italic
@@ -65,5 +64,5 @@ let g:CommandTMaxFiles=400000
 " Settings for VIM Airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tmuxline#enabled = 0
-let g:airline_theme='solarized'
-"let g:airline_theme='nord'
+"let g:airline_theme='solarized'
+let g:airline_theme='materialmonokai'
