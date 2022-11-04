@@ -1,12 +1,14 @@
 " gui colors if running iTerm
-if $TERM_PROGRAM =~ "iTerm"
-  set termguicolors
-  set t_8f=[38;2;%lu;%lu;%lum
-  set t_8b=[48;2;%lu;%lu;%lum
-endif
+"if $TERM_PROGRAM =~ "iTerm"
+"  set termguicolors
+"  set t_8f=[38;2;%lu;%lu;%lum
+"  set t_8b=[48;2;%lu;%lu;%lum
+"endif
 
 " Change mapleader to ","
 let mapleader=","
+
+set guifont=CamingoCode\ Nerd\ Font:h13
 
 " General settings {{{
 
@@ -35,6 +37,10 @@ set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·
 
 " Set Color Scheme
 set background=dark
+
+" Enable true color
+set termguicolors
+
 "colorscheme solarized
 colorscheme material-monokai
 
@@ -56,6 +62,20 @@ noremap x "_x
 
 " }}}
 
+" neovim Specific
+
+if !has('nvim')
+    set ttymouse=xterm2
+endif
+
+" VS Code neovim
+
+if exists('g:vscode')
+    " VSCode extension
+else
+    " ordinary neovim
+endif
+
 let NERDTreeShowHidden=1
 
 " Increase max file limit for Command-T
@@ -64,5 +84,5 @@ let g:CommandTMaxFiles=400000
 " Settings for VIM Airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tmuxline#enabled = 0
-"let g:airline_theme='solarized'
+
 let g:airline_theme='materialmonokai'
