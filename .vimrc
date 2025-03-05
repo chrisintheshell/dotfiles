@@ -8,7 +8,7 @@
 " Change mapleader to ","
 let mapleader=","
 
-set guifont=CamingoCode\ Nerd\ Font:h13
+set guifont=SFMono\ Nerd\ Font:h12
 
 " General settings {{{
 
@@ -70,11 +70,11 @@ endif
 
 " VS Code neovim
 
-if exists('g:vscode')
+"if exists('g:vscode')
     " VSCode extension
-else
+"else
     " ordinary neovim
-endif
+"endif
 
 let NERDTreeShowHidden=1
 
