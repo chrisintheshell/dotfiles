@@ -6,6 +6,10 @@ alt_hyper = { "cmd", "ctrl" }
 hyper = { "cmd", "alt", "ctrl" }
 shift_hyper = { "cmd", "alt", "ctrl", "shift" }
 
+-- Spoon Management
+
+hs.loadSpoon("SpoonInstall")
+
 -- Maps Left Ctrl + HJKL to arrow keys while preserving Shift, ⌘, and ⌥
 local keyMap = {
   h = "left",
@@ -35,10 +39,6 @@ eventtap = hs.eventtap.new({ hs.eventtap.event.types.keyDown }, function(event)
 end)
 
 eventtap:start()
-
--- Spoon Management
-
-hs.loadSpoon("SpoonInstall")
 
 -- Application hotkeys
 hs.hotkey.bind(alt_hyper, "1", function()
@@ -81,7 +81,7 @@ hs.hotkey.bind(alt_hyper, "W", function()
   hs.application.launchOrFocus("Fantastical")
 end)
 
--- Define the keyboard shortcut
+-- Hotkey to copy message ID from an email using message:// URL scheme
 hs.hotkey.bind(alt_hyper, "M", function()
   -- The AppleScript you want to run
   local get_message_url = [[
