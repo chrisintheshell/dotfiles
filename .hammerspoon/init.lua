@@ -10,6 +10,8 @@ shift_hyper = { "cmd", "alt", "ctrl", "shift" }
 
 hs.loadSpoon("SpoonInstall")
 
+-- Constants
+
 -- Maps Left Ctrl + HJKL to arrow keys while preserving Shift, ⌘, and ⌥
 local keyMap = {
   h = "left",
@@ -17,6 +19,9 @@ local keyMap = {
   k = "up",
   l = "right"
 }
+local appGhostty = "Ghostty"
+local previousSpace = nil
+local previousApp = nil
 
 eventtap = hs.eventtap.new({ hs.eventtap.event.types.keyDown }, function(event)
   local originalKey = hs.keycodes.map[event:getKeyCode()]
@@ -40,7 +45,8 @@ end)
 
 eventtap:start()
 
--- Application hotkeys
+-- Keybindings
+
 hs.hotkey.bind(alt_hyper, "1", function()
   hs.application.launchOrFocus("Firefox")
 end)
@@ -77,10 +83,6 @@ hs.hotkey.bind(alt_hyper, "E", function()
   hs.application.launchOrFocus("Zed")
 end)
 
-hs.hotkey.bind(alt_hyper, "W", function()
-  hs.application.launchOrFocus("Fantastical")
-end)
-
 -- Hotkey to copy message ID from an email using message:// URL scheme
 hs.hotkey.bind(alt_hyper, "M", function()
   -- The AppleScript you want to run
@@ -102,7 +104,60 @@ hs.hotkey.bind(alt_hyper, "M", function()
   hs.osascript.applescript(get_message_url)
 end)
 
+hs.hotkey.bind(alt_hyper, "T", function()
+  local currentApp = hs.application.frontmostApplication()
+  local currentSpace = hs.spaces.focusedSpace()
+  local targetApp = hs.application.get(appGhostty)
+
+  if targetApp and targetApp:isFrontmost() then
+    -- If Ghostty is active, switch back
+    if previousApp and previousApp:name() ~= "Finder" then
+      previousApp:activate()
+    elseif previousSpace then
+      hs.spaces.gotoSpace(previousSpace)
+    else
+      hs.eventtap.keyStroke({ "ctrl" }, "Up") -- Open Mission Control as a fallback
+    end
+  else
+    -- Store current app and space before switching
+    if currentApp:name() ~= "Finder" then
+      previousApp = currentApp
+    end
+    previousSpace = currentSpace
+
+    if targetApp then
+      -- Attempt to select the first window from the Window menu
+      local menuItems = targetApp:getMenuItems()
+      if menuItems and menuItems["Window"] then
+        local windowMenu = menuItems["Window"]
+        for _, item in ipairs(windowMenu) do
+          if item.AXTitle and not item.AXRole then
+            targetApp:selectMenuItem(item.AXTitle)
+            break -- Select the first valid window
+          end
+        end
+      end
+
+      -- Ensure Ghostty's window is focused
+      local win = targetApp:mainWindow()
+      if win then
+        win:focus()
+      else
+        hs.application.launchOrFocus(appGhostty)
+      end
+    else
+      hs.application.launchOrFocus(appGhostty)
+    end
+  end
+end)
+
+hs.hotkey.bind(alt_hyper, "W", function()
+  hs.application.launchOrFocus("Fantastical")
+end)
+
 local localfile = hs.configdir .. "/init-local.lua"
 if hs.fs.attributes(localfile) then
   dofile(localfile)
 end
+
+hs.alert.show("Hammerspoon Config Loaded")
