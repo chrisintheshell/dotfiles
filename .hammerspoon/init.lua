@@ -23,6 +23,8 @@ local appGhostty = "Ghostty"
 local previousSpace = nil
 local previousApp = nil
 
+-- Tap into input events (mouse, keyboard, trackpad)
+
 eventtap = hs.eventtap.new({ hs.eventtap.event.types.keyDown }, function(event)
   local originalKey = hs.keycodes.map[event:getKeyCode()]
   local mods = event:getFlags()
@@ -64,14 +66,18 @@ hs.hotkey.bind(alt_hyper, "4", function()
 end)
 
 hs.hotkey.bind(alt_hyper, "5", function()
-  hs.application.launchOrFocus("NetBox Work")
+  hs.application.launchOrFocus("Things3")
 end)
 
 hs.hotkey.bind(alt_hyper, "6", function()
-  hs.application.launchOrFocus("Jira")
+  hs.application.launchOrFocus("NetBox Work")
 end)
 
 hs.hotkey.bind(alt_hyper, "7", function()
+  hs.application.launchOrFocus("Jira")
+end)
+
+hs.hotkey.bind(alt_hyper, "8", function()
   hs.application.launchOrFocus("Confluence")
 end)
 
@@ -104,6 +110,7 @@ hs.hotkey.bind(alt_hyper, "M", function()
   hs.osascript.applescript(get_message_url)
 end)
 
+-- Hotkey to show/hide the Ghostty terminal app window (currently using tmux with a quick terminal so this is not really used)
 hs.hotkey.bind(alt_hyper, "T", function()
   local currentApp = hs.application.frontmostApplication()
   local currentSpace = hs.spaces.focusedSpace()

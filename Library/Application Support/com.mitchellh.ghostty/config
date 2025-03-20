@@ -17,7 +17,7 @@ font-size = 12
 
 theme = MaterialDesignColors
 background = #263238
-foreground = #f0f0f0
+foreground = #dde3e6
 
 macos-icon = custom-style
 macos-icon-ghost-color = #ffffff
