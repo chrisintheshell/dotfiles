@@ -1,15 +1,49 @@
 // Zed settings
 {
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
   "theme": "City Lights",
-  //"experimental.theme_overrides": {
-  //  "players": [
-  //    {
-  //      "cursor": "#F0F",
-  //      "background": "#0F0",
-  //      "selection": "#FF0"
-  //    }
-  //  ]
-  //},
+  "experimental.theme_overrides": {
+    "ghost_element.hover": "#1D252C99",
+    "background.appearance": "blurred",
+    "background": "#1D252CCC",
+    "editor.background": "#1D252C10",
+    "editor.gutter.background": "#1D252C10",
+    "title_bar.background": "#171d23DF",
+    "toolbar.background": "#1D252C10",
+    "terminal.background": "#171d2300",
+    "status_bar.background": "#171d23DF",
+    "tab.active_background": "#1D252C",
+    "tab.inactive_background": "#171d2300",
+    "tab_bar.background": "#181e2410",
+    "panel.background": "#171d2310",
+    "border": "#171d2300",
+    "border.variant": "#171d2300",
+    "scrollbar.track.border": "#333F4A00",
+    "scrollbar.track.background": "#1D252C00",
+    "scrollbar.thumb.background": "#41505E80",
+    "scrollbar.thumb.hover.background": "#41505ECC",
+    "scrollbar.thumb.border": "#41505E80",
+    "editor.line_highlight": "#00000000",
+    "editor.active_line.background": "#00000000",
+    "editor.selection.background": "#00000000",
+    "editor.selection.foreground": "#00000000",
+    "editor.selection.border": "#00000000",
+    "editor.selection.inactive.foreground": "#00000000",
+    "editor.selection.inactive.border": "#00000000",
+    "editor.selection.active.background": "#00000000",
+    "editor.selection.active.foreground": "#00000000",
+    "editor.selection.active.border": "#00000000",
+    "editor.selection.inactive.background": "#00000000"
+    //  "players": [
+    //    {
+    //      "cursor": "#F0F",
+    //      "background": "#0F0",
+    //      "selection": "#FF0"
+    //    }
+    //  ]
+  },
   "tab_size": 2,
   "vim_mode": true,
   "vim": {
