@@ -1,46 +1,37 @@
 # Labrnth Ghostty Config
 
-background-opacity = 0.96
-background-blur = true
-
 font-family = "SFMono Nerd Font"
-
 font-family-bold = "SFMono Nerd Font"
 font-family-italic = "SFMono Nerd Font"
 font-family-bold-italic = "SFMono Nerd Font"
-
 font-style-bold = "Bold"
 font-style-italic = "Italic"
 font-style-bold-italic = "Bold Italic"
-
 font-size = 12
-
 theme = MaterialDesignColors
+alpha-blending = native
 background = #263238
 foreground = #dde3e6
-
-macos-icon = custom-style
-macos-icon-ghost-color = #ffffff
-macos-icon-screen-color = #263238
-macos-icon-frame = beige
-
-cursor-color =
+selection-invert-fg-bg = true
 cursor-invert-fg-bg = true
 cursor-style = block
-shell-integration-features = no-cursor
 cursor-style-blink = false
-
-quick-terminal-position = bottom
-quick-terminal-animation-duration = 0.0
-quick-terminal-screen = macos-menu-bar
-quick-terminal-space-behavior = move
-macos-non-native-fullscreen = true
-initial-window = false
-
 mouse-hide-while-typing
-
+background-opacity = 0.94
+background-blur = true
+#command = "tmux attach -t local || tmux new -s local"
 keybind = global:ctrl+escape=toggle_quick_terminal
 keybind = global:ctrl+`=toggle_quick_terminal
 #keybind = global:ctrl+`=toggle_visibility
-
+initial-window = false
+quick-terminal-position = bottom
+quick-terminal-screen = macos-menu-bar
+quick-terminal-animation-duration = 0.0
+quick-terminal-space-behavior = move
+shell-integration-features = no-cursor
+macos-non-native-fullscreen = true
+macos-icon = custom-style
+macos-icon-frame = beige
+macos-icon-ghost-color = #ffffff
+macos-icon-screen-color = #263238
 auto-update-channel = tip
