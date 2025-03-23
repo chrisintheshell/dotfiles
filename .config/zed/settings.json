@@ -1,5 +1,6 @@
 // Zed settings
 {
+  "icon_theme": "Material Icon Theme",
   "features": {
     "edit_prediction_provider": "zed"
   },

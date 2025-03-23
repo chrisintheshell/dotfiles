@@ -22,7 +22,7 @@ foreground = #dde3e6
 macos-icon = custom-style
 macos-icon-ghost-color = #ffffff
 macos-icon-screen-color = #263238
-macos-icon-frame = plastic
+macos-icon-frame = beige
 
 cursor-color =
 cursor-invert-fg-bg = true
