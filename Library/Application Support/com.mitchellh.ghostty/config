@@ -17,9 +17,9 @@ cursor-invert-fg-bg = true
 cursor-style = block
 cursor-style-blink = false
 mouse-hide-while-typing
-background-opacity = 0.94
+background-opacity = 0.95
 background-blur = true
-#command = "tmux attach -t local || tmux new -s local"
+initial-command = /bin/zsh -i -c "tmux attach -t local || tmux new -s local"
 keybind = global:ctrl+escape=toggle_quick_terminal
 keybind = global:ctrl+`=toggle_quick_terminal
 #keybind = global:ctrl+`=toggle_visibility
