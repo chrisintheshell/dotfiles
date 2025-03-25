@@ -27,6 +27,7 @@ initial-window = false
 quick-terminal-position = bottom
 quick-terminal-screen = macos-menu-bar
 quick-terminal-animation-duration = 0.0
+quick-terminal-autohide = false
 quick-terminal-space-behavior = move
 shell-integration-features = no-cursor
 macos-non-native-fullscreen = true
