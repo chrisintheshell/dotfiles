@@ -15,7 +15,7 @@
     "toolbar.background": "#1D252C10",
     "terminal.background": "#171d2300",
     "status_bar.background": "#171d23DF",
-    "tab.active_background": "#1D252C",
+    "tab.active_background": "#333A41",
     "tab.inactive_background": "#171d2300",
     "tab_bar.background": "#181e2410",
     "panel.background": "#171d2310",
