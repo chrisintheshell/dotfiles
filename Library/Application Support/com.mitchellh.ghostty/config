@@ -35,4 +35,4 @@ macos-icon = custom-style
 macos-icon-frame = beige
 macos-icon-ghost-color = #ffffff
 macos-icon-screen-color = #263238
-auto-update-channel = tip
+#auto-update-channel = tip
