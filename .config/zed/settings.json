@@ -5,7 +5,16 @@
     "edit_prediction_provider": "zed"
   },
   "theme": "City Lights",
+
   "experimental.theme_overrides": {
+    "syntax": {
+      "comment": {
+        "font_style": "italic"
+      },
+      "comment.doc": {
+        "font_style": "italic"
+      }
+    },
     "ghost_element.hover": "#1D252C99",
     "background.appearance": "blurred",
     "background": "#1D252CCC",
