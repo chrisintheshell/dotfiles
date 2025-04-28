@@ -110,8 +110,12 @@ hs.hotkey.bind(alt_hyper, "M", function()
   hs.osascript.applescript(get_message_url)
 end)
 
-hs.hotkey.bind(alt_hyper, "P", function()
+hs.hotkey.bind(alt_hyper, "O", function()
   hs.application.launchOrFocus("1Password")
+end)
+
+hs.hotkey.bind(alt_hyper, "P", function()
+  hs.application.launchOrFocus("Parsec")
 end)
 
 -- Hotkey to show/hide the Ghostty terminal app window (currently using tmux with a quick terminal so this is not really used)
