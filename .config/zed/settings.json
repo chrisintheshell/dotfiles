@@ -4,7 +4,7 @@
   "features": {
     "edit_prediction_provider": "zed"
   },
-  "theme": "City Lights",
+  "theme": "Zedokai (Filter Machine)",
 
   "experimental.theme_overrides": {
     "syntax": {
