@@ -8,7 +8,7 @@
       "appearance": "dark",
       "style": {
         "background": "#1d252c",
-        "border": "#1d252c",
+        "border": "#41505e",
         "border.variant": "#28323a",
         "border.focused": "#5ec4ff",
         "border.selected": "#5ec4ff",
