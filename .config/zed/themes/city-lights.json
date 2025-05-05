@@ -150,7 +150,7 @@
             "color": "#ebbf83"
           },
           "constructor": {
-            "color": "#e2bd3a"
+            "color": "#ebbf83"
           },
           "keyword": {
             "color": "#5ec4ff"
@@ -195,7 +195,7 @@
             "color": "#b7c5d3"
           },
           "variable.builtin": {
-            "color": "#b7c5d3"
+            "color": "#d95e7c"
           },
           "variable.parameter": {
             "color": "#b7c5d3"
@@ -204,7 +204,7 @@
             "color": "#70e1e8"
           },
           "variable.special": {
-            "color": "#70e1e8"
+            "color": "#d95e7c"
           },
           "property": {
             "color": "#70e1e8"
@@ -225,37 +225,37 @@
             "color": "#b7c5d3"
           },
           "punctuation": {
-            "color": "#41505e"
+            "color": "#b7c5d3"
           },
           "punctuation.bracket": {
-            "color": "#41505e"
+            "color": "#b7c5d3"
           },
           "punctuation.delimiter": {
-            "color": "#41505e"
+            "color": "#b7c5d3"
           },
           "punctuation.special": {
-            "color": "#41505e"
+            "color": "#b7c5d3"
           },
           "tag": {
             "color": "#e27e8d"
           },
           "tag.attribute": {
-            "color": "#d95e7c"
+            "color": "#ebbf83"
           },
           "tag.delimiter": {
-            "color": "#41505e"
+            "color": "#b7c5d3"
           },
           "attribute": {
-            "color": "#d95e7c"
+            "color": "#ebbf83"
           },
           "attribute.name": {
-            "color": "#d95e7c"
+            "color": "#ebbf83"
           },
           "attribute.value": {
             "color": "#8bd49c"
           },
           "embedded": {
-            "color": "#ffee93"
+            "color": "#b7c5d3"
           },
           "markup.heading": {
             "color": "#5ec4ff",
