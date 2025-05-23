@@ -89,6 +89,10 @@ hs.hotkey.bind(alt_hyper, "E", function()
   hs.application.launchOrFocus("Zed")
 end)
 
+hs.hotkey.bind(alt_hyper, "G", function()
+  hs.application.launchOrFocus("GoodLinks")
+end)
+
 -- Hotkey to copy message ID from an email using message:// URL scheme
 hs.hotkey.bind(alt_hyper, "M", function()
   -- The AppleScript you want to run
