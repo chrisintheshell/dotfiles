@@ -12,6 +12,7 @@ hs.loadSpoon("SpoonInstall")
 
 -- Constants
 
+local appGhostty = "Ghostty"
 -- Maps Left Ctrl + HJKL to arrow keys while preserving Shift, ⌘, and ⌥
 local keyMap = {
   h = "left",
@@ -19,7 +20,6 @@ local keyMap = {
   k = "up",
   l = "right"
 }
-local appGhostty = "Ghostty"
 local previousSpace = nil
 local previousApp = nil
 
