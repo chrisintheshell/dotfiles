@@ -119,7 +119,7 @@ hs.hotkey.bind(alt_hyper, "O", function()
 end)
 
 hs.hotkey.bind(alt_hyper, "P", function()
-  hs.application.launchOrFocus("Parsec")
+  hs.application.launchOrFocus("Planner")
 end)
 
 -- Hotkey to show/hide the Ghostty terminal app window (currently using tmux with a quick terminal so this is not really used)
