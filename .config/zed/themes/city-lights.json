@@ -7,7 +7,6 @@
       "name": "City Lights",
       "appearance": "dark",
       "style": {
-        "background": "#1d252c",
         "border": "#41505e",
         "border.variant": "#28323a",
         "border.focused": "#5ec4ff",
@@ -17,6 +16,8 @@
         "elevated_surface.background": "#1d252c",
         "surface.background": "#181e24",
         "surface.highlight": "#28323a",
+        "background": "#1d252c",
+        "element.background": "#222a32",
         "text": "#b7c5d3",
         "text.muted": "#718ca1",
         "text.placeholder": "#41505e",
@@ -45,6 +46,8 @@
         "link.active": "#70e1e8",
         "selection.primary": "#28323a",
         "panel.background": "#222A32",
+        "panel.focused_border": null,
+        "pane.focused_border": null,
         "primer.background": "#181e24",
         "primer.border": "#1d252c",
         "primer.text": "#b7c5d3",
@@ -106,14 +109,16 @@
         "diagnostic.hint": "#70e1e8",
         "players": [],
         "syntax": {
+          "attribute": {
+            "color": "#74ade8ff",
+            "font_style": null,
+            "font_weight": null
+          },
           "comment": {
             "color": "#41505e",
             "font_style": "italic"
           },
           "constant": {
-            "color": "#5ec4ff"
-          },
-          "number": {
             "color": "#5ec4ff"
           },
           "boolean": {
@@ -186,6 +191,9 @@
             "color": "#5ec4ff"
           },
           "keyword.storage.modifier": {
+            "color": "#5ec4ff"
+          },
+          "number": {
             "color": "#5ec4ff"
           },
           "operator": {
