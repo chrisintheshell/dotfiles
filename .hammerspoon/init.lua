@@ -85,6 +85,10 @@ hs.hotkey.bind(alt_hyper, "C", function()
   hs.application.launchOrFocus("Microsoft Teams")
 end)
 
+hs.hotkey.bind(alt_hyper, "D", function()
+  hs.application.launchOrFocus("Dia")
+end)
+
 hs.hotkey.bind(alt_hyper, "E", function()
   hs.application.launchOrFocus("Zed")
 end)

@@ -19,7 +19,8 @@ cursor-style-blink = false
 mouse-hide-while-typing
 background-opacity = 0.95
 background-blur = true
-initial-command = /bin/zsh -i -c "tmux attach -t local || tmux new -s local"
+#initial-command = /bin/zsh -i -c "tmux attach -t local || tmux new -s local"
+initial-command = /bin/zsh -i -c ~/bin/tmux-init-local.sh
 keybind = global:ctrl+escape=toggle_quick_terminal
 keybind = global:ctrl+`=toggle_quick_terminal
 #keybind = global:ctrl+`=toggle_visibility
@@ -32,8 +33,9 @@ quick-terminal-autohide = false
 quick-terminal-space-behavior = move
 shell-integration-features = no-cursor
 macos-non-native-fullscreen = true
-macos-icon = custom-style
-macos-icon-frame = aluminum
-macos-icon-ghost-color = #ffffff
-macos-icon-screen-color = #263238
+macos-icon = glass
+#macos-icon = custom-style
+#macos-icon-frame = aluminum
+#macos-icon-ghost-color = #ffffff
+#macos-icon-screen-color = #263238
 auto-update-channel = tip
