@@ -8,12 +8,13 @@ font-style-bold = "Bold"
 font-style-italic = "Medium Italic"
 font-style-bold-italic = "Bold Italic"
 font-size = 12
-theme = MaterialDesignColors
 alpha-blending = native
+theme = MaterialDesignColors
 background = #263238
 foreground = #dde3e6
-selection-invert-fg-bg = true
-cursor-invert-fg-bg = true
+selection-foreground = cell-background
+selection-background = cell-foreground
+cursor-color = cell-foreground
 cursor-style = block
 cursor-style-blink = false
 mouse-hide-while-typing
@@ -24,6 +25,9 @@ initial-command = /bin/zsh -i -c ~/bin/tmux-init-local.sh
 keybind = global:ctrl+escape=toggle_quick_terminal
 keybind = global:ctrl+`=toggle_quick_terminal
 #keybind = global:ctrl+`=toggle_visibility
+window-title-font-family = "SF Pro Display"
+window-theme = auto
+window-colorspace = display-p3
 confirm-close-surface = false
 initial-window = false
 quick-terminal-position = bottom
@@ -33,9 +37,15 @@ quick-terminal-autohide = false
 quick-terminal-space-behavior = move
 shell-integration-features = no-cursor
 macos-non-native-fullscreen = true
+macos-titlebar-style = transparent
+macos-auto-secure-input = true
+macos-secure-input-indication = true
 macos-icon = glass
 #macos-icon = custom-style
 #macos-icon-frame = aluminum
 #macos-icon-ghost-color = #ffffff
 #macos-icon-screen-color = #263238
+macos-shortcuts = ask
+desktop-notifications = true
+auto-update = check
 auto-update-channel = tip
