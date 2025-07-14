@@ -118,6 +118,10 @@ hs.hotkey.bind(alt_hyper, "M", function()
   hs.osascript.applescript(get_message_url)
 end)
 
+hs.hotkey.bind(alt_hyper, "N", function()
+  hs.application.launchOrFocus("NetNewsWire")
+end)
+
 hs.hotkey.bind(alt_hyper, "O", function()
   hs.application.launchOrFocus("1Password")
 end)
