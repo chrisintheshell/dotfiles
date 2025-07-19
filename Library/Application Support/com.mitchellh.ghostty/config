@@ -22,12 +22,16 @@ background-opacity = 0.95
 background-blur = true
 #initial-command = /bin/zsh -i -c "tmux attach -t local || tmux new -s local"
 initial-command = /bin/zsh -i -c ~/bin/tmux-init-local.sh
+link-url = true
 keybind = global:ctrl+escape=toggle_quick_terminal
 keybind = global:ctrl+`=toggle_quick_terminal
 #keybind = global:ctrl+`=toggle_visibility
 window-title-font-family = "SF Pro Display"
 window-theme = auto
 window-colorspace = display-p3
+clipboard-read = allow
+clipboard-write = allow
+copy-on-select = clipboard
 confirm-close-surface = false
 initial-window = false
 quick-terminal-position = bottom
