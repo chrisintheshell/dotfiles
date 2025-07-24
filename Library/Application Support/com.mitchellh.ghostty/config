@@ -8,7 +8,6 @@ font-style-bold = "Bold"
 font-style-italic = "Medium Italic"
 font-style-bold-italic = "Bold Italic"
 font-size = 12
-alpha-blending = native
 theme = MaterialDesignColors
 background = #263238
 foreground = #dde3e6
