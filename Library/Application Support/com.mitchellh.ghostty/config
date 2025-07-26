@@ -19,11 +19,13 @@ cursor-style-blink = false
 mouse-hide-while-typing
 background-opacity = 0.95
 background-blur = true
-#initial-command = /bin/zsh -i -c "tmux attach -t local || tmux new -s local"
-initial-command = /bin/zsh -i -c ~/bin/tmux-init-local.sh
+#initial-command = /bin/zsh -i -c ~/bin/tmux-init-local.sh
+initial-command = /bin/zsh -i -c "tmux attach -t local || tmux new -s local \\; new-window \\; new-window \\; new-window \\; select-window -t 3 \\; split-window -h \\; select-pane -t 1 \\; split-window -v \\;"
 link-url = true
 keybind = global:ctrl+escape=toggle_quick_terminal
 keybind = global:ctrl+`=toggle_quick_terminal
+#keybind = cmd+shift+r=text:~/bin/tmux-init-local.sh\n
+keybind = cmd+shift+r=text:sh -c "tmux attach -t local || tmux new -s local \\; new-window \\; new-window \\; new-window \\; select-window -t 3 \\; split-window -h \\; select-pane -t 1 \\; split-window -v \\;"\n
 #keybind = global:ctrl+`=toggle_visibility
 window-title-font-family = "SF Pro Display"
 window-theme = auto
