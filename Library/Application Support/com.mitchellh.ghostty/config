@@ -25,7 +25,8 @@ link-url = true
 keybind = global:ctrl+escape=toggle_quick_terminal
 keybind = global:ctrl+`=toggle_quick_terminal
 #keybind = cmd+shift+r=text:~/bin/tmux-init-local.sh\n
-keybind = cmd+shift+r=text:sh -c "tmux attach -t local || tmux new -s local \\; new-window \\; new-window \\; new-window \\; select-window -t 3 \\; split-window -h \\; select-pane -t 1 \\; split-window -v \\;"\n
+keybind = cmd+shift+l=text:sh -c "tmux attach -t local || tmux new -s local \\; new-window \\; new-window \\; new-window \\; select-window -t 3 \\; split-window -h \\; select-pane -t 1 \\; split-window -v \\;"\n
+keybind = cmd+shift+r=text:sh -c "tmux new-session -d -s remote"\n
 #keybind = global:ctrl+`=toggle_visibility
 window-title-font-family = "SF Pro Display"
 window-theme = auto
