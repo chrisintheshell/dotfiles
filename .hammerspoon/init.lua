@@ -20,8 +20,8 @@ hs.loadSpoon("SpoonInstall")
 local activeScrolls = {}
 
 -- Settings
-local SCROLL_SPEED = 0.03 -- Time between scrolls (0.03 = ~33 scrolls/sec)
-local HOLD_DELAY = 0.2    -- Delay before continuous scrolling starts
+local SCROLL_SPEED = 0.023 -- Time between scrolls (0.03 = ~33 scrolls/sec)
+local HOLD_DELAY = 0.2     -- Delay before continuous scrolling starts
 
 -- Key mappings
 local keyMap = {
