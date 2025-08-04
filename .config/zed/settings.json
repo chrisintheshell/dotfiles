@@ -4,7 +4,7 @@
   "features": {
     "edit_prediction_provider": "zed"
   },
-  "theme": "City Lights",
+  "theme": "Oceanic Next",
 
   "experimental.theme_overrides": {
     "syntax": {
@@ -17,7 +17,7 @@
     }
     //    "ghost_element.hover": "#1D252C99",
     //    "background.appearance": "blurred",
-    //    "background": "#1D252CCC",
+    //   "background": "#263238CC",
     //    "editor.background": "#1D252C10",
     //    "editor.gutter.background": "#1D252C10",
     //    "title_bar.background": "#171d23DF",
