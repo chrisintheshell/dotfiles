@@ -4,7 +4,7 @@
   "features": {
     "edit_prediction_provider": "zed"
   },
-  "theme": "Oceanic Next",
+  "theme": "City Lights",
 
   "experimental.theme_overrides": {
     "syntax": {

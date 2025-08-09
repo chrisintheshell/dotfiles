@@ -12,14 +12,7 @@ hs.loadSpoon("SpoonInstall")
 
 -- Constants
 
--- Vi navigation with smooth scrolling
-local activeScrolls = {}
-
--- Settings
-local SCROLL_SPEED = 0.023 -- Time between scrolls (0.03 = ~33 scrolls/sec)
-local HOLD_DELAY = 0.2 -- Delay before continuous scrolling starts
-
--- Key mappings
+-- Maps Left Ctrl + HJKL to arrow keys while preserving Shift, ⌘, and ⌥
 local keyMap = {
 	h = "left",
 	j = "down",
@@ -27,109 +20,35 @@ local keyMap = {
 	l = "right",
 }
 
--- Send arrow key preserving modifiers (except Ctrl)
-local function sendArrowKey(arrow, mods)
-	local newMods = {}
-	if mods.shift then
-		table.insert(newMods, "shift")
-	end
-	if mods.cmd then
-		table.insert(newMods, "cmd")
-	end
-	if mods.alt then
-		table.insert(newMods, "alt")
-	end
+-- Tap into input events (mouse, keyboard, trackpad)
 
-	hs.eventtap.keyStroke(newMods, arrow, 0)
-end
-
--- Clean up all active scrolls
-local function stopAllScrolling()
-	for key, scroll in pairs(activeScrolls) do
-		if scroll.timer then
-			scroll.timer:stop()
-		end
-		activeScrolls[key] = nil
-	end
-end
-
--- Create key down handler
-local keyDown = hs.eventtap.new({ hs.eventtap.event.types.keyDown }, function(event)
-	local key = hs.keycodes.map[event:getKeyCode()]
+eventtap = hs.eventtap.new({ hs.eventtap.event.types.keyDown }, function(event)
+	local originalKey = hs.keycodes.map[event:getKeyCode()]
 	local mods = event:getFlags()
 
-	if mods.ctrl and keyMap[key] then
-		-- If this key is already scrolling, ignore (blocks OS key repeat)
-		if activeScrolls[key] then
-			return true
+	-- Only trigger remapping when Left Ctrl is held
+	if mods.ctrl and keyMap[originalKey] then
+		-- Create a table of currently active modifiers, excluding Ctrl
+		local newMods = {}
+		if mods.shift then
+			table.insert(newMods, "shift")
+		end
+		if mods.cmd then
+			table.insert(newMods, "cmd")
+		end
+		if mods.alt then
+			table.insert(newMods, "alt")
 		end
 
-		local arrow = keyMap[key]
-		activeScrolls[key] = { active = true }
-
-		-- Send first arrow immediately
-		sendArrowKey(arrow, mods)
-
-		-- Schedule continuous scrolling
-		activeScrolls[key].timer = hs.timer.doAfter(HOLD_DELAY, function()
-			if activeScrolls[key] and activeScrolls[key].active then
-				activeScrolls[key].timer = hs.timer.doEvery(SCROLL_SPEED, function()
-					if activeScrolls[key] and activeScrolls[key].active then
-						sendArrowKey(arrow, mods)
-					end
-				end)
-			end
-		end)
-
-		return true
+		-- Simulate the key press with the modified keys (excluding Ctrl)
+		hs.eventtap.keyStroke(newMods, keyMap[originalKey], 0)
+		return true -- Suppress the original key press
 	end
 
-	return false
+	return false -- Allow other key events to pass through
 end)
 
--- Create key up handler
-local keyUp = hs.eventtap.new({ hs.eventtap.event.types.keyUp }, function(event)
-	local key = hs.keycodes.map[event:getKeyCode()]
-
-	if activeScrolls[key] then
-		if activeScrolls[key].timer then
-			activeScrolls[key].timer:stop()
-		end
-		activeScrolls[key] = nil
-	end
-
-	return false
-end)
-
--- Watch for Ctrl release
-local modifierWatcher = hs.eventtap.new({ hs.eventtap.event.types.flagsChanged }, function(event)
-	if not event:getFlags().ctrl then
-		stopAllScrolling()
-	end
-	return false
-end)
-
--- Start all watchers
-keyDown:start()
-keyUp:start()
-modifierWatcher:start()
-
--- Cleanup on reload
-if _G.viScrollCleanup then
-	_G.viScrollCleanup()
-end
-_G.viScrollCleanup = function()
-	stopAllScrolling()
-	if keyDown then
-		keyDown:stop()
-	end
-	if keyUp then
-		keyUp:stop()
-	end
-	if modifierWatcher then
-		modifierWatcher:stop()
-	end
-end
+eventtap:start()
 
 -- Keybindings
 
