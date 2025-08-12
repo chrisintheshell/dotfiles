@@ -12,43 +12,43 @@ hs.loadSpoon("SpoonInstall")
 
 -- Constants
 
--- Maps Left Ctrl + HJKL to arrow keys while preserving Shift, ⌘, and ⌥
-local keyMap = {
-	h = "left",
-	j = "down",
-	k = "up",
-	l = "right",
-}
-
--- Tap into input events (mouse, keyboard, trackpad)
-
-eventtap = hs.eventtap.new({ hs.eventtap.event.types.keyDown }, function(event)
-	local originalKey = hs.keycodes.map[event:getKeyCode()]
-	local mods = event:getFlags()
-
-	-- Only trigger remapping when Left Ctrl is held
-	if mods.ctrl and keyMap[originalKey] then
-		-- Create a table of currently active modifiers, excluding Ctrl
-		local newMods = {}
-		if mods.shift then
-			table.insert(newMods, "shift")
-		end
-		if mods.cmd then
-			table.insert(newMods, "cmd")
-		end
-		if mods.alt then
-			table.insert(newMods, "alt")
-		end
-
-		-- Simulate the key press with the modified keys (excluding Ctrl)
-		hs.eventtap.keyStroke(newMods, keyMap[originalKey], 0)
-		return true -- Suppress the original key press
-	end
-
-	return false -- Allow other key events to pass through
-end)
-
-eventtap:start()
+---- Maps Left Ctrl + HJKL to arrow keys while preserving Shift, ⌘, and ⌥
+--local keyMap = {
+--	h = "left",
+--	j = "down",
+--	k = "up",
+--	l = "right",
+--}
+--
+---- Tap into input events (mouse, keyboard, trackpad)
+--
+--eventtap = hs.eventtap.new({ hs.eventtap.event.types.keyDown }, function(event)
+--	local originalKey = hs.keycodes.map[event:getKeyCode()]
+--	local mods = event:getFlags()
+--
+--	-- Only trigger remapping when Left Ctrl is held
+--	if mods.ctrl and keyMap[originalKey] then
+--		-- Create a table of currently active modifiers, excluding Ctrl
+--		local newMods = {}
+--		if mods.shift then
+--			table.insert(newMods, "shift")
+--		end
+--		if mods.cmd then
+--			table.insert(newMods, "cmd")
+--		end
+--		if mods.alt then
+--			table.insert(newMods, "alt")
+--		end
+--
+--		-- Simulate the key press with the modified keys (excluding Ctrl)
+--		hs.eventtap.keyStroke(newMods, keyMap[originalKey], 0)
+--		return true -- Suppress the original key press
+--	end
+--
+--	return false -- Allow other key events to pass through
+--end)
+--
+--eventtap:start()
 
 -- Keybindings
 
