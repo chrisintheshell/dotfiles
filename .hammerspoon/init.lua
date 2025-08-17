@@ -15,45 +15,53 @@ hs.loadSpoon("SpoonInstall")
 -- Keybindings
 
 hs.hotkey.bind(alt_hyper, "1", function()
-	hs.application.launchOrFocus("Firefox")
+  hs.application.launchOrFocus("Firefox")
 end)
 
 hs.hotkey.bind(alt_hyper, "2", function()
-	hs.application.launchOrFocus("Mail")
+  hs.application.launchOrFocus("Mail")
 end)
 
 hs.hotkey.bind(alt_hyper, "3", function()
-	hs.application.launchOrFocus("Mimestream")
+  hs.application.launchOrFocus("Mimestream")
 end)
 
 hs.hotkey.bind(alt_hyper, "4", function()
-	hs.application.launchOrFocus("Bear")
+  hs.application.launchOrFocus("Bear")
 end)
 
 hs.hotkey.bind(alt_hyper, "5", function()
-	hs.application.launchOrFocus("Things3")
+  hs.application.launchOrFocus("Things3")
 end)
 
 hs.hotkey.bind(alt_hyper, "C", function()
-	hs.application.launchOrFocus("Microsoft Teams")
-end)
-
-hs.hotkey.bind(alt_hyper, "D", function()
-	hs.application.launchOrFocus("Dia")
+  hs.application.launchOrFocus("Calendar")
 end)
 
 hs.hotkey.bind(alt_hyper, "E", function()
-	hs.application.launchOrFocus("Zed")
+  hs.application.launchOrFocus("Zed")
 end)
 
+function openFirefoxTabSearch()
+  hs.application.launchOrFocus("Firefox")
+  hs.timer.doAfter(0.3, function()
+    hs.eventtap.keyStroke({ "cmd" }, "l") -- Focus address bar
+    hs.timer.doAfter(0.1, function()
+      hs.eventtap.keyStrokes("% ")        -- Type % followed by space to search tabs
+    end)
+  end)
+end
+
+hs.hotkey.bind(alt_hyper, "F", openFirefoxTabSearch)
+
 hs.hotkey.bind(alt_hyper, "G", function()
-	hs.application.launchOrFocus("GoodLinks")
+  hs.application.launchOrFocus("GoodLinks")
 end)
 
 -- Hotkey to copy message ID from an email using message:// URL scheme
 hs.hotkey.bind(alt_hyper, "M", function()
-	-- The AppleScript you want to run
-	local get_message_url = [[
+  -- The AppleScript you want to run
+  local get_message_url = [[
     tell application "Mail"
 	set selMessages to selection
 	if (count selMessages) > 0 then
@@ -67,37 +75,29 @@ hs.hotkey.bind(alt_hyper, "M", function()
     end tell
     ]]
 
-	-- Execute the AppleScript
-	hs.osascript.applescript(get_message_url)
+  -- Execute the AppleScript
+  hs.osascript.applescript(get_message_url)
 end)
 
 hs.hotkey.bind(alt_hyper, "N", function()
-	hs.application.launchOrFocus("NetNewsWire")
+  hs.application.launchOrFocus("NetNewsWire")
 end)
 
-hs.hotkey.bind(alt_hyper, "O", function()
-	hs.application.launchOrFocus("1Password")
+hs.hotkey.bind(alt_hyper, "P", function()
+  hs.application.launchOrFocus("1Password")
 end)
 
-function openFirefoxTabSearch()
-	hs.application.launchOrFocus("Firefox")
-	hs.timer.doAfter(0.3, function()
-		hs.eventtap.keyStroke({ "cmd" }, "l") -- Focus address bar
-		hs.timer.doAfter(0.1, function()
-			hs.eventtap.keyStrokes("% ") -- Type % followed by space to search tabs
-		end)
-	end)
-end
-
-hs.hotkey.bind(alt_hyper, "T", openFirefoxTabSearch)
+hs.hotkey.bind(alt_hyper, "T", function()
+  hs.application.launchOrFocus("Microsoft Teams")
+end)
 
 hs.hotkey.bind(alt_hyper, "W", function()
-	hs.application.launchOrFocus("Fantastical")
+  hs.application.launchOrFocus("Fantastical")
 end)
 
 local localfile = hs.configdir .. "/init-local.lua"
 if hs.fs.attributes(localfile) then
-	dofile(localfile)
+  dofile(localfile)
 end
 
 hs.alert.show("Hammerspoon Config Loaded")
