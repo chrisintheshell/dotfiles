@@ -73,7 +73,7 @@ return {
         lualine_a = {
           {
             "mode",
-            separator = { left = "", right = "" },
+            separator = { left = "", right = "" },
             right_padding = 2,
           },
         },
@@ -115,7 +115,7 @@ return {
         lualine_z = {
           {
             "location",
-            separator = { left = "", right = "" },
+            separator = { left = "", right = "" },
             left_padding = 2,
           },
         },
