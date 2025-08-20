@@ -14,31 +14,31 @@ hs.loadSpoon("SpoonInstall")
 
 -- Keybindings
 
-hs.hotkey.bind(hyper, "1", function()
+hs.hotkey.bind(alt_hyper, "1", function()
   hs.application.launchOrFocus("Firefox")
 end)
 
-hs.hotkey.bind(hyper, "2", function()
+hs.hotkey.bind(alt_hyper, "2", function()
   hs.application.launchOrFocus("Mail")
 end)
 
-hs.hotkey.bind(hyper, "3", function()
+hs.hotkey.bind(alt_hyper, "3", function()
   hs.application.launchOrFocus("Mimestream")
 end)
 
-hs.hotkey.bind(hyper, "4", function()
+hs.hotkey.bind(alt_hyper, "4", function()
   hs.application.launchOrFocus("Bear")
 end)
 
-hs.hotkey.bind(hyper, "5", function()
+hs.hotkey.bind(alt_hyper, "5", function()
   hs.application.launchOrFocus("Things3")
 end)
 
-hs.hotkey.bind(hyper, "C", function()
-  hs.application.launchOrFocus("Calendar")
+hs.hotkey.bind(alt_hyper, "C", function()
+  hs.application.launchOrFocus("Fantastical")
 end)
 
-hs.hotkey.bind(hyper, "E", function()
+hs.hotkey.bind(alt_hyper, "E", function()
   hs.application.launchOrFocus("Zed")
 end)
 
@@ -52,14 +52,14 @@ function openFirefoxTabSearch()
   end)
 end
 
-hs.hotkey.bind(hyper, "F", openFirefoxTabSearch)
+hs.hotkey.bind(alt_hyper, "F", openFirefoxTabSearch)
 
-hs.hotkey.bind(hyper, "G", function()
+hs.hotkey.bind(alt_hyper, "G", function()
   hs.application.launchOrFocus("GoodLinks")
 end)
 
 -- Hotkey to copy message ID from an email using message:// URL scheme
-hs.hotkey.bind(hyper, "M", function()
+hs.hotkey.bind(alt_hyper, "M", function()
   -- The AppleScript you want to run
   local get_message_url = [[
     tell application "Mail"
@@ -79,19 +79,19 @@ hs.hotkey.bind(hyper, "M", function()
   hs.osascript.applescript(get_message_url)
 end)
 
-hs.hotkey.bind(hyper, "N", function()
+hs.hotkey.bind(alt_hyper, "N", function()
   hs.application.launchOrFocus("NetNewsWire")
 end)
 
-hs.hotkey.bind(hyper, "P", function()
+hs.hotkey.bind(alt_hyper, "P", function()
   hs.application.launchOrFocus("1Password")
 end)
 
-hs.hotkey.bind(hyper, "T", function()
+hs.hotkey.bind(alt_hyper, "T", function()
   hs.application.launchOrFocus("Microsoft Teams")
 end)
 
-hs.hotkey.bind(hyper, "W", function()
+hs.hotkey.bind(alt_hyper, "W", function()
   hs.application.launchOrFocus("Fantastical")
 end)
 
