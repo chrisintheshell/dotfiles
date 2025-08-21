@@ -1,6 +1,6 @@
 add_newline = true
 command_timeout = 200
-format = "[$directory$git_branch]($style)$character"
+format = "[$username$hostname $directory$git_branch]($style)$character"
 
 [character]
 error_symbol = "[✗](bold red)"
@@ -12,6 +12,19 @@ truncation_length = 2
 truncation_symbol = "…/"
 repo_root_style = "bold cyan"
 repo_root_format = "[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) "
+
+[username]
+style_user = "bold green"
+style_root = "bold red" 
+format = "[$user@]($style)"
+disabled = false
+show_always = false  # Only shows for SSH
+
+[hostname]
+ssh_only = true
+style = "bold #FFB74D"
+format = "[$hostname]($style)"
+disabled = false
 
 [git_branch]
 format = "[$branch]($style) "
