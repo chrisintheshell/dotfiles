@@ -15,8 +15,8 @@ repo_root_format = "[$repo_root]($repo_root_style)[$path]($style)[$read_only]($r
 
 [username]
 style_user = "bold green"
-style_root = "bold red" 
-format = "[$user@]($style)"
+style_root = "bold red"
+format = "[$user]($style) at "
 disabled = false
 show_always = false  # Only shows for SSH
 
