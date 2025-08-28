@@ -52,6 +52,5 @@ macos-icon = glass
 #macos-icon-ghost-color = #ffffff
 #macos-icon-screen-color = #263238
 macos-shortcuts = ask
-desktop-notifications = true
 auto-update = check
 auto-update-channel = tip
