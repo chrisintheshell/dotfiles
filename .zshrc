@@ -4,6 +4,9 @@ export ZSH="$HOME/.oh-my-zsh"
 #Theme
 ZSH_THEME=""
 
+# Customizations
+ZSH_CUSTOM=$HOME/.zsh_custom
+
 # Plugins
 plugins=(git tmux-notify)
 
