@@ -57,3 +57,4 @@ macos-icon = glass
 macos-shortcuts = ask
 auto-update = check
 auto-update-channel = tip
+scrollbar = never
