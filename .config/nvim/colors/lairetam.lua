@@ -9,7 +9,7 @@ vim.g.colors_name = "lairetam"
 local colors = {
   fg = "#CDD3DE",
   black = "#263238",
-  darker_black = "#1B2B34",
+  darker_black = "#1E282C",
   red = "#E57373",
   baby_pink = "#F06292",
   pink = "#F06292",
@@ -35,59 +35,10 @@ vim.api.nvim_set_hl(0, "Comment", { fg = colors.comment, italic = true })
 vim.api.nvim_set_hl(0, "Keyword", { fg = colors.keyword, bold = true })
 -- continue with more highlight groups
 
--- Function to apply custom highlights (transparency)
-local function apply_custom_highlights()
-  -- Transparency settings
-  local transparent_groups = {
-    "Normal",
-    "NormalFloat",
-    "NormalNC",
-    "SignColumn",
-    "Folded",
-    "FoldColumn",
-    "LineNr",
-    "CursorLineNr",
-    "CursorLine",
-    "EndOfBuffer",
-    "TelescopeNormal",
-    "TelescopeBorder",
-    "NvimTreeNormal",
-    "NvimTreeNormalNC",
-    "NeoTreeNormal",
-    "NeoTreeNormalNC",
-    "StatusLine",
-    "StatusLineNC",
-  }
-
-  for _, group in ipairs(transparent_groups) do
-    vim.api.nvim_set_hl(0, group, { bg = "#263238", ctermbg = "NONE" })
-  end
-
-  -- Lualine transparency
-  local lualine_groups = {
-    "lualine_c_normal",
-    "lualine_b_normal",
-    "lualine_b_insert",
-    "lualine_b_visual",
-    "lualine_b_replace",
-    "lualine_b_command",
-    "lualine_c_insert",
-    "lualine_c_visual",
-    "lualine_c_replace",
-    "lualine_c_command",
-  }
-
-  for _, group in ipairs(lualine_groups) do
-    vim.api.nvim_set_hl(0, group, { bg = "#263238", ctermbg = "NONE" })
-  end
-end
-
--- Apply the transparency settings
-apply_custom_highlights()
-
 -- Custom color overrides
---vim.api.nvim_set_hl(0, "Normal", { fg = colors.fg, bg = colors.bg })
-vim.api.nvim_set_hl(0, "Normal", { fg = colors.fg })
+vim.api.nvim_set_hl(0, "Normal", { fg = colors.fg, bg = colors.bg })
+--vim.api.nvim_set_hl(0, "Normal", { fg = colors.fg })
+
 -- Comments
 vim.api.nvim_set_hl(0, "Comment", { italic = true, fg = colors.grey })
 vim.api.nvim_set_hl(0, "@comment", { italic = true, fg = colors.grey })
@@ -181,6 +132,9 @@ vim.api.nvim_set_hl(0, "WinSeparator", { fg = colors.black, bg = "NONE" })
 vim.api.nvim_set_hl(0, "TabLine", { fg = colors.grey, bg = colors.darker_black })
 vim.api.nvim_set_hl(0, "TabLineFill", { bg = colors.darker_black })
 vim.api.nvim_set_hl(0, "TabLineSel", { fg = colors.fg, bg = colors.black })
+
+-- Floating window background (cmp, lsp hover, telescope preview, etc.)
+vim.api.nvim_set_hl(0, "NormalFloat", { fg = colors.fg, bg = "NONE" })
 
 -- Diagnostics
 vim.api.nvim_set_hl(0, "DiagnosticError", { fg = colors.red })
