@@ -7,7 +7,10 @@ vim.g.colors_name = "lairetam"
 
 -- Custom color palette
 local colors = {
+  bg = "#263238",
   fg = "#CDD3DE",
+  cursorline_bg = "#37474F",
+  visual_bg = "#455A64",
   black = "#263238",
   darker_black = "#1E282C",
   red = "#E57373",
@@ -24,20 +27,13 @@ local colors = {
   teal = "#4DB6AC",
   orange = "#FFB74D",
   cyan = "#4DD0E1",
-  grey = "#65737E",
-  light_grey = "#A0A8B7",
-  dark_grey = "#4B5263",
+  light_grey = "#78909C",
+  grey = "#607D8B",
+  dark_grey = "#546E7A",
 }
 
 -- Apply basic highlights
 vim.api.nvim_set_hl(0, "Normal", { fg = colors.fg, bg = colors.bg })
-vim.api.nvim_set_hl(0, "Comment", { fg = colors.comment, italic = true })
-vim.api.nvim_set_hl(0, "Keyword", { fg = colors.keyword, bold = true })
--- continue with more highlight groups
-
--- Custom color overrides
-vim.api.nvim_set_hl(0, "Normal", { fg = colors.fg, bg = colors.bg })
---vim.api.nvim_set_hl(0, "Normal", { fg = colors.fg })
 
 -- Comments
 vim.api.nvim_set_hl(0, "Comment", { italic = true, fg = colors.grey })
@@ -46,7 +42,7 @@ vim.api.nvim_set_hl(0, "@comment.line", { italic = true, fg = colors.grey })
 vim.api.nvim_set_hl(0, "@comment.block", { italic = true, fg = colors.grey })
 
 -- Line numbers
-vim.api.nvim_set_hl(0, "LineNr", { fg = colors.grey, bg = "NONE" })
+vim.api.nvim_set_hl(0, "LineNr", { fg = colors.dark_grey, bg = "NONE" })
 vim.api.nvim_set_hl(0, "CursorLineNr", { fg = colors.fg, bg = "NONE" })
 
 -- Syntax highlighting with custom colors
@@ -62,7 +58,7 @@ vim.api.nvim_set_hl(0, "Conditional", { fg = colors.purple })
 vim.api.nvim_set_hl(0, "Repeat", { fg = colors.purple })
 vim.api.nvim_set_hl(0, "Label", { fg = colors.purple })
 vim.api.nvim_set_hl(0, "Operator", { fg = colors.cyan })
-vim.api.nvim_set_hl(0, "Keyword", { fg = colors.purple })
+vim.api.nvim_set_hl(0, "Keyword", { fg = colors.purple, bold = true })
 vim.api.nvim_set_hl(0, "Exception", { fg = colors.purple })
 vim.api.nvim_set_hl(0, "PreProc", { fg = colors.yellow })
 vim.api.nvim_set_hl(0, "Include", { fg = colors.purple })
@@ -120,11 +116,11 @@ vim.api.nvim_set_hl(0, "Pmenu", { fg = colors.fg, bg = colors.darker_black })
 vim.api.nvim_set_hl(0, "PmenuSel", { fg = colors.darker_black, bg = colors.blue })
 vim.api.nvim_set_hl(0, "PmenuSbar", { bg = colors.black })
 vim.api.nvim_set_hl(0, "PmenuThumb", { bg = colors.grey })
-vim.api.nvim_set_hl(0, "Visual", { bg = colors.dark_grey })
-vim.api.nvim_set_hl(0, "VisualNOS", { bg = colors.dark_grey })
+vim.api.nvim_set_hl(0, "Visual", { bg = colors.visual_bg })
+vim.api.nvim_set_hl(0, "VisualNOS", { bg = colors.visual_bg })
 vim.api.nvim_set_hl(0, "Search", { fg = colors.darker_black, bg = colors.yellow })
 vim.api.nvim_set_hl(0, "IncSearch", { fg = colors.darker_black, bg = colors.sun })
-vim.api.nvim_set_hl(0, "CursorLine", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "CursorLine", { bg = colors.cursorline_bg })
 vim.api.nvim_set_hl(0, "CursorColumn", { bg = colors.black })
 vim.api.nvim_set_hl(0, "ColorColumn", { bg = colors.black })
 vim.api.nvim_set_hl(0, "VertSplit", { fg = colors.black, bg = "NONE" })
