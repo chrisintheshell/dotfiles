@@ -15,7 +15,6 @@ foreground = #dde3e6
 selection-foreground = cell-background
 selection-background = cell-foreground
 cursor-color = cell-foreground
-cursor-opacity = 0.7
 cursor-style = block
 cursor-style-blink = false
 mouse-hide-while-typing
