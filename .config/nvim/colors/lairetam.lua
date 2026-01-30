@@ -8,7 +8,7 @@ vim.g.colors_name = "lairetam"
 -- Custom color palette
 local colors = {
   bg = "#263238",
-  fg = "#CDD3DE",
+  fg = "#ECEFF1",
   cursorline_bg = "#37474F",
   visual_bg = "#455A64",
   black = "#263238",
@@ -120,6 +120,7 @@ vim.api.nvim_set_hl(0, "Visual", { bg = colors.visual_bg })
 vim.api.nvim_set_hl(0, "VisualNOS", { bg = colors.visual_bg })
 vim.api.nvim_set_hl(0, "Search", { fg = colors.darker_black, bg = colors.yellow })
 vim.api.nvim_set_hl(0, "IncSearch", { fg = colors.darker_black, bg = colors.sun })
+vim.api.nvim_set_hl(0, "CurSearch", { fg = colors.darker_black, bg = colors.yellow })
 vim.api.nvim_set_hl(0, "CursorLine", { bg = colors.cursorline_bg })
 vim.api.nvim_set_hl(0, "CursorColumn", { bg = colors.black })
 vim.api.nvim_set_hl(0, "ColorColumn", { bg = colors.black })

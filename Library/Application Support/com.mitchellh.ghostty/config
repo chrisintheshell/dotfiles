@@ -2,21 +2,19 @@
 # cjones@labrnth.xyz
 
 font-family = "Geist Mono"
-font-family-bold = "Geist Mono"
-font-family-italic = "Geist Mono"
-font-family-bold-italic = "Geist Mono"
 font-style-bold = "Bold"
 font-style-italic = "Medium Italic"
 font-style-bold-italic = "Bold Italic"
 font-size = 12.2
 theme = Material Design Colors
 background = #263238
-foreground = #dde3e6
+foreground = #eceff1
 selection-foreground = cell-background
 selection-background = cell-foreground
 cursor-color = cell-foreground
 cursor-style = block
 cursor-style-blink = false
+cursor-text = cell-background
 mouse-hide-while-typing
 background-opacity = 0.95
 background-blur = true
@@ -40,7 +38,7 @@ quick-terminal-position = bottom
 quick-terminal-screen = macos-menu-bar
 quick-terminal-animation-duration = 0.0
 quick-terminal-autohide = false
-quick-terminal-space-behavior = move
+shell-integration = zsh
 shell-integration-features = no-cursor
 #custom-shader = /Users/cjones/Code/github/chrisintheshell/ghostty-shaders/cursor_blaze_new.glsl
 bell-features = no-attention

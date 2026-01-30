@@ -24,3 +24,10 @@ fi
 
 # Starship
 eval "$(starship init zsh)"
+
+# Amp CLI
+export PATH="/Users/cjones/.amp/bin:$PATH"
+
+# UV
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
