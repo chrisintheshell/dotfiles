@@ -1,9 +1,9 @@
 // Zed settings
 {
-  "icon_theme": "Zed (Default)",
-  "features": {
-    "edit_prediction_provider": "zed"
+  "edit_predictions": {
+    "provider": "zed"
   },
+  "icon_theme": "Zed (Default)",
   "theme": "City Lights",
 
   "experimental.theme_overrides": {
