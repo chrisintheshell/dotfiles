@@ -1,6 +1,3 @@
-# Chris Jones' Ghostty Config
-# cjones@labrnth.xyz
-
 font-family = "Geist Mono"
 font-style-bold = "Bold"
 font-style-italic = "Medium Italic"
@@ -20,6 +17,8 @@ mouse-hide-while-typing
 background-opacity = 0.95
 background-blur = true
 initial-command = /bin/zsh -i -c "tmux attach -t local || tmux new -s local \\; new-window \\; new-window \\; new-window \\; select-window -t 3 \\; split-window -h \\; select-pane -t 1 \\; split-window -v \\;"
+notify-on-command-finish = always
+notify-on-command-finish-action = no-bell,notify
 link-url = true
 keybind = global:ctrl+escape=toggle_quick_terminal
 keybind = global:ctrl+`=toggle_quick_terminal
@@ -51,7 +50,7 @@ macos-secure-input-indication = true
 #macos-icon = glass
 macos-shortcuts = ask
 auto-update = check
-auto-update-channel = tip
+#auto-update-channel = tip
 scrollbar = never
 
 palette = 0=#435b67
