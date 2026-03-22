@@ -4,10 +4,10 @@ font-style-italic = "Medium Italic"
 font-style-bold-italic = "Bold Italic"
 font-size = 12.2
 #theme = Material Design Colors
-background = #263238
-foreground = #eceff1
-selection-foreground = cell-background
-selection-background = cell-foreground
+#background = #263238
+#foreground = #eceff1
+#selection-foreground = cell-background
+#selection-background = cell-foreground
 adjust-cursor-thickness = 300%
 cursor-color = cell-foreground
 cursor-style = block
@@ -16,15 +16,64 @@ cursor-text = cell-background
 mouse-hide-while-typing
 background-opacity = 0.95
 background-blur = true
-initial-command = /bin/zsh -i -c "tmux attach -t local || tmux new -s local \\; new-window \\; new-window \\; new-window \\; select-window -t 3 \\; split-window -h \\; select-pane -t 1 \\; split-window -v \\;"
+#initial-command = /bin/zsh -i -c "tmux attach -t local || tmux new -s local \\; new-window \\; new-window \\; new-window \\; select-window -t 3 \\; split-window -h \\; select-pane -t 1 \\; split-window -v \\;"
 notify-on-command-finish = always
 notify-on-command-finish-action = no-bell,notify
 link-url = true
 keybind = global:ctrl+escape=toggle_quick_terminal
 keybind = global:ctrl+`=toggle_quick_terminal
-keybind = cmd+shift+l=text:sh -c "tmux attach -t local || tmux new -s local \\; new-window \\; new-window \\; new-window \\; select-window -t 3 \\; split-window -h \\; select-pane -t 1 \\; split-window -v \\;"\n
-keybind = cmd+shift+r=text:sh -c "tmux new-session -d -s remote"\n
+#keybind = cmd+shift+l=text:sh -c "tmux attach -t local || tmux new -s local \\; new-window \\; new-window \\; new-window \\; select-window -t 3 \\; split-window -h \\; select-pane -t 1 \\; split-window -v \\;"\n
+#keybind = cmd+shift+r=text:sh -c "tmux new-session -d -s remote"\n
 #keybind = global:ctrl+`=toggle_visibility
+
+# Vim-mode keybindings for Ghostty.
+#
+# Note: We're missing a number of actions to produce a better vim experience.
+# This is what is possible today! But we plan on adding more actions to make
+# this even better in the future.
+
+# Entry point
+keybind = option+v=activate_key_table:vim
+
+# Key table definition
+keybind = vim/
+
+# Line movement
+keybind = vim/j=scroll_page_lines:1
+keybind = vim/k=scroll_page_lines:-1
+
+# Page movement
+keybind = vim/ctrl+d=scroll_page_down
+keybind = vim/ctrl+u=scroll_page_up
+keybind = vim/ctrl+f=scroll_page_down
+keybind = vim/ctrl+b=scroll_page_up
+keybind = vim/shift+j=scroll_page_down
+keybind = vim/shift+k=scroll_page_up
+
+# Jump to top/bottom
+keybind = vim/g>g=scroll_to_top
+keybind = vim/shift+g=scroll_to_bottom
+
+# Search (if you want vim-style search entry)
+keybind = vim/slash=start_search
+keybind = vim/n=navigate_search:next
+
+# Copy mode / selection
+# Note we're missing a lot of actions here to make this more full featured.
+keybind = vim/v=copy_to_clipboard
+keybind = vim/y=copy_to_clipboard
+
+# Command Palette
+keybind = vim/shift+semicolon=toggle_command_palette
+
+# Exit
+keybind = vim/escape=deactivate_key_table
+keybind = vim/q=deactivate_key_table
+keybind = vim/i=deactivate_key_table
+
+# Catch unbound keys
+keybind = vim/catch_all=ignore
+
 window-padding-x = 8
 window-title-font-family = "Geist"
 window-theme = auto
@@ -33,7 +82,7 @@ clipboard-read = allow
 clipboard-write = allow
 copy-on-select = clipboard
 confirm-close-surface = false
-initial-window = false
+#initial-window = false
 quick-terminal-position = bottom
 quick-terminal-size = 100%
 quick-terminal-screen = macos-menu-bar
@@ -53,19 +102,280 @@ auto-update = check
 #auto-update-channel = tip
 scrollbar = never
 
-palette = 0=#435b67
-palette = 1=#fc3841
-palette = 2=#5cf19e
-palette = 3=#fed032
-palette = 4=#37b6ff
-palette = 5=#fc226e
-palette = 6=#59ffd1
-palette = 7=#ffffff
-palette = 8=#a1b0b8
-palette = 9=#fc746d
-palette = 10=#adf7be
-palette = 11=#fee16c
-palette = 12=#70cfff
-palette = 13=#fc669b
-palette = 14=#9affe6
-palette = 15=#ffffff
+#palette = 0=#435b67
+#palette = 1=#fc3841
+#palette = 2=#5cf19e
+#palette = 3=#fed032
+#palette = 4=#37b6ff
+#palette = 5=#fc226e
+#palette = 6=#59ffd1
+#palette = 7=#ffffff
+#palette = 8=#a1b0b8
+#palette = 9=#fc746d
+#palette = 10=#adf7be
+#palette = 11=#fee16c
+#palette = 12=#70cfff
+#palette = 13=#fc669b
+#palette = 14=#9affe6
+#palette = 15=#ffffff
+
+background = #263238
+foreground = #eceff1
+selection-background = #505b60
+selection-foreground = cell-foreground
+palette = 0 = #202c31
+palette = 1 = #fc3841
+palette = 2 = #5cf19e
+palette = 3 = #fed032
+palette = 4 = #37b6ff
+palette = 5 = #fc226e
+palette = 6 = #59ffd1
+palette = 7 = #eceff1
+palette = 8 = #536067
+palette = 9 = #ff4b4e
+palette = 10 = #78ffb5
+palette = 11 = #ffe84d
+palette = 12 = #55c9ff
+palette = 13 = #ff3b7c
+palette = 14 = #78ffeb
+palette = 15 = #fcffff
+palette = 16 = #263238
+palette = 17 = #2f4a5b
+palette = 18 = #366381
+palette = 19 = #3a7eaa
+palette = 20 = #3b99d3
+palette = 21 = #37b6ff
+palette = 22 = #34544b
+palette = 23 = #3c696b
+palette = 24 = #427f8c
+palette = 25 = #4695ae
+palette = 26 = #48add2
+palette = 27 = #47c4f6
+palette = 28 = #40795f
+palette = 29 = #468a7a
+palette = 30 = #4b9c96
+palette = 31 = #4eaeb2
+palette = 32 = #50c0d0
+palette = 33 = #51d3ed
+palette = 34 = #4a9f74
+palette = 35 = #4fac89
+palette = 36 = #52b9a0
+palette = 37 = #55c6b6
+palette = 38 = #56d4cd
+palette = 39 = #56e1e4
+palette = 40 = #54c789
+palette = 41 = #56cf99
+palette = 42 = #58d7a9
+palette = 43 = #59e0ba
+palette = 44 = #5ae8ca
+palette = 45 = #59f0db
+palette = 46 = #5cf19e
+palette = 47 = #5cf4a8
+palette = 48 = #5cf7b2
+palette = 49 = #5cf9bd
+palette = 50 = #5bfcc7
+palette = 51 = #59ffd1
+palette = 52 = #54393a
+palette = 53 = #624d58
+palette = 54 = #6f6178
+palette = 55 = #7b769a
+palette = 56 = #858cbc
+palette = 57 = #8ea2e0
+palette = 58 = #635b4a
+palette = 59 = #6e6c66
+palette = 60 = #787d83
+palette = 61 = #818fa0
+palette = 62 = #89a2bf
+palette = 63 = #8fb5df
+palette = 64 = #717d5a
+palette = 65 = #798b73
+palette = 66 = #809a8d
+palette = 67 = #86a8a7
+palette = 68 = #8bb7c2
+palette = 69 = #8fc6dd
+palette = 70 = #7da16a
+palette = 71 = #82ac80
+palette = 72 = #86b796
+palette = 73 = #89c2ad
+palette = 74 = #8bcdc4
+palette = 75 = #8dd8dc
+palette = 76 = #87c57a
+palette = 77 = #89cd8d
+palette = 78 = #8ad4a0
+palette = 79 = #8bdbb3
+palette = 80 = #8ae3c6
+palette = 81 = #89ebda
+palette = 82 = #90eb8b
+palette = 83 = #8fef9a
+palette = 84 = #8df2aa
+palette = 85 = #8bf6b9
+palette = 86 = #87f9c8
+palette = 87 = #83fdd7
+palette = 88 = #7d3e3c
+palette = 89 = #8a4d55
+palette = 90 = #975d6f
+palette = 91 = #a36d8a
+palette = 92 = #ae7da6
+palette = 93 = #b88dc2
+palette = 94 = #8b6048
+palette = 95 = #966d60
+palette = 96 = #9f7a79
+palette = 97 = #a88793
+palette = 98 = #b095ad
+palette = 99 = #b7a3c8
+palette = 100 = #978054
+palette = 101 = #9f8b6b
+palette = 102 = #a69683
+palette = 103 = #aca29c
+palette = 104 = #b1aeb4
+palette = 105 = #b5b9ce
+palette = 106 = #a2a15f
+palette = 107 = #a7aa76
+palette = 108 = #abb38d
+palette = 109 = #aebca4
+palette = 110 = #b0c6bc
+palette = 111 = #b1cfd3
+palette = 112 = #acc36b
+palette = 113 = #aec981
+palette = 114 = #afd097
+palette = 115 = #afd7ad
+palette = 116 = #addec3
+palette = 117 = #abe4d8
+palette = 118 = #b3e577
+palette = 119 = #b2e98c
+palette = 120 = #b0eda1
+palette = 121 = #adf1b5
+palette = 122 = #a9f6ca
+palette = 123 = #a2fade
+palette = 124 = #a7403e
+palette = 125 = #b14b52
+palette = 126 = #ba5566
+palette = 127 = #c45f7b
+palette = 128 = #cd6a90
+palette = 129 = #d575a5
+palette = 130 = #b26346
+palette = 131 = #ba6b5b
+palette = 132 = #c17570
+palette = 133 = #c87e85
+palette = 134 = #cf879b
+palette = 135 = #d491b2
+palette = 136 = #bb824d
+palette = 137 = #c18a64
+palette = 138 = #c7927a
+palette = 139 = #cb9a90
+palette = 140 = #cfa3a7
+palette = 141 = #d2abbe
+palette = 142 = #c4a155
+palette = 143 = #c8a86d
+palette = 144 = #cbaf84
+palette = 145 = #cdb69b
+palette = 146 = #cebdb3
+palette = 147 = #cec5cb
+palette = 148 = #cac05c
+palette = 149 = #ccc675
+palette = 150 = #cdcb8e
+palette = 151 = #ccd1a7
+palette = 152 = #cad7bf
+palette = 153 = #c7ded7
+palette = 154 = #d0df63
+palette = 155 = #cfe37e
+palette = 156 = #cde898
+palette = 157 = #caedb2
+palette = 158 = #c5f2cb
+palette = 159 = #bdf7e4
+palette = 160 = #d13f40
+palette = 161 = #d6434e
+palette = 162 = #dc485d
+palette = 163 = #e14d6b
+palette = 164 = #e6517a
+palette = 165 = #eb5689
+palette = 166 = #d86343
+palette = 167 = #dd6855
+palette = 168 = #e16d67
+palette = 169 = #e57178
+palette = 170 = #e9768a
+palette = 171 = #ec7b9c
+palette = 172 = #de8346
+palette = 173 = #e2875c
+palette = 174 = #e58c71
+palette = 175 = #e89185
+palette = 176 = #e9969a
+palette = 177 = #eb9baf
+palette = 178 = #e3a049
+palette = 179 = #e5a462
+palette = 180 = #e7a97b
+palette = 181 = #e8af93
+palette = 182 = #e8b4aa
+palette = 183 = #e7b9c2
+palette = 184 = #e6bc4b
+palette = 185 = #e8c169
+palette = 186 = #e8c685
+palette = 187 = #e7cba0
+palette = 188 = #e4d1bb
+palette = 189 = #e0d6d6
+palette = 190 = #e8d84d
+palette = 191 = #e8dd70
+palette = 192 = #e6e290
+palette = 193 = #e3e8ae
+palette = 194 = #deedcc
+palette = 195 = #d6f3eb
+palette = 196 = #fc3841
+palette = 197 = #fc344a
+palette = 198 = #fc3053
+palette = 199 = #fc2c5c
+palette = 200 = #fc2765
+palette = 201 = #fc226e
+palette = 202 = #ff6240
+palette = 203 = #ff614f
+palette = 204 = #ff615d
+palette = 205 = #ff616b
+palette = 206 = #ff6079
+palette = 207 = #ff6086
+palette = 208 = #ff813e
+palette = 209 = #ff8254
+palette = 210 = #ff8467
+palette = 211 = #ff857a
+palette = 212 = #ff878d
+palette = 213 = #ff89a0
+palette = 214 = #ff9d3c
+palette = 215 = #ffa058
+palette = 216 = #ffa371
+palette = 217 = #ffa68a
+palette = 218 = #ffa9a2
+palette = 219 = #fdadba
+palette = 220 = #ffb738
+palette = 221 = #ffbb5c
+palette = 222 = #ffc07c
+palette = 223 = #ffc49a
+palette = 224 = #fcc9b8
+palette = 225 = #f7ced5
+palette = 226 = #fed032
+palette = 227 = #ffd661
+palette = 228 = #fedc87
+palette = 229 = #fae2ab
+palette = 230 = #f5e8ce
+palette = 231 = #eceff1
+palette = 232 = #2d383e
+palette = 233 = #343f45
+palette = 234 = #3b464c
+palette = 235 = #424d52
+palette = 236 = #495459
+palette = 237 = #505b60
+palette = 238 = #586267
+palette = 239 = #5f696e
+palette = 240 = #677075
+palette = 241 = #6f787c
+palette = 242 = #777f84
+palette = 243 = #7e878b
+palette = 244 = #868e93
+palette = 245 = #8e969a
+palette = 246 = #979ea2
+palette = 247 = #9fa6a9
+palette = 248 = #a7adb1
+palette = 249 = #b0b5b9
+palette = 250 = #b8bdc1
+palette = 251 = #c0c6c9
+palette = 252 = #c9ced1
+palette = 253 = #d2d6d9
+palette = 254 = #dadee1
+palette = 255 = #e3e7e9
