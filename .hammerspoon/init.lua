@@ -55,7 +55,7 @@ end
 hs.hotkey.bind(alt_hyper, "F", openFirefoxTabSearch)
 
 hs.hotkey.bind(alt_hyper, "G", function()
-	hs.application.launchOrFocus("GoodLinks")
+	hs.application.launchOrFocus("Ghostty")
 end)
 
 -- Hotkey to copy message ID from an email using message:// URL scheme
