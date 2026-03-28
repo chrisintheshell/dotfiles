@@ -17,7 +17,7 @@ mouse-hide-while-typing
 background-opacity = 0.95
 background-blur = true
 #initial-command = /bin/zsh -i -c "tmux attach -t local || tmux new -s local \\; new-window \\; new-window \\; new-window \\; select-window -t 3 \\; split-window -h \\; select-pane -t 1 \\; split-window -v \\;"
-notify-on-command-finish = always
+notify-on-command-finish = unfocused
 notify-on-command-finish-action = no-bell,notify
 link-url = true
 keybind = global:ctrl+escape=toggle_quick_terminal
