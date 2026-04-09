@@ -24,7 +24,7 @@ keybind = global:ctrl+escape=toggle_quick_terminal
 keybind = global:ctrl+`=toggle_quick_terminal
 #keybind = cmd+shift+l=text:sh -c "tmux attach -t local || tmux new -s local \\; new-window \\; new-window \\; new-window \\; select-window -t 3 \\; split-window -h \\; select-pane -t 1 \\; split-window -v \\;"\n
 #keybind = cmd+shift+r=text:sh -c "tmux new-session -d -s remote"\n
-#keybind = global:ctrl+`=toggle_visibility
+#keybind = global:ctrl+cmd+g=toggle_visibility
 
 # Vim-mode keybindings for Ghostty.
 #
@@ -89,35 +89,16 @@ quick-terminal-screen = macos-menu-bar
 quick-terminal-animation-duration = 0.0
 quick-terminal-autohide = false
 shell-integration = zsh
-shell-integration-features = no-cursor
-custom-shader = /Users/cjones/Code/github/chrisintheshell/ghostty-shaders/smooth_cursor_movement.glsl
+shell-integration-features = ssh-terminfo,ssh-env,no-cursor
+#custom-shader = /Users/cjones/Code/github/chrisintheshell/ghostty-shaders/smooth_cursor_movement.glsl
 bell-features = no-attention
-macos-non-native-fullscreen = true
 macos-titlebar-style = transparent
 macos-auto-secure-input = true
 macos-secure-input-indication = true
-#macos-icon = glass
 macos-shortcuts = ask
 auto-update = check
-#auto-update-channel = tip
+auto-update-channel = tip
 scrollbar = never
-
-#palette = 0=#435b67
-#palette = 1=#fc3841
-#palette = 2=#5cf19e
-#palette = 3=#fed032
-#palette = 4=#37b6ff
-#palette = 5=#fc226e
-#palette = 6=#59ffd1
-#palette = 7=#ffffff
-#palette = 8=#a1b0b8
-#palette = 9=#fc746d
-#palette = 10=#adf7be
-#palette = 11=#fee16c
-#palette = 12=#70cfff
-#palette = 13=#fc669b
-#palette = 14=#9affe6
-#palette = 15=#ffffff
 
 background = #263238
 foreground = #eceff1
