@@ -19,7 +19,7 @@ hs.hotkey.bind(alt_hyper, "1", function()
 end)
 
 hs.hotkey.bind(alt_hyper, "2", function()
-	hs.application.launchOrFocus("Mail")
+	hs.application.launchOrFocus("Microsoft Outlook")
 end)
 
 hs.hotkey.bind(alt_hyper, "3", function()
