@@ -11,6 +11,8 @@ map("n", "x", '"_x', { desc = "Delete without updating register", noremap = true
 
 -- ⌥ + Delete: delete the word to the left of the insertion point (insert mode)
 map("i", "<M-BS>", "<C-w>", { desc = "Delete word left" })
+map("i", "<A-BS>", "<C-w>", { desc = "Delete word left" })
+map("i", "<Esc><BS>", "<C-w>", { desc = "Delete word left" })
 
 -- ⌘ + Delete: delete text from the insertion point to the beginning of the line (insert mode)
 map("i", "<C-k>", "<C-u>", { desc = "Delete to beginning of line" })
