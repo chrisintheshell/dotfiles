@@ -17,6 +17,9 @@ alias servo-fix-permissions='xattr -r -d com.apple.quarantine /Applications/Serv
 # 1Password
 alias op-signin='eval $(op signin paladin)'
 
+# Bear
+alias bearcli='/Applications/Bear.app/Contents/MacOS/bearcli'
+
 # Containers
 
 # Git & Config
