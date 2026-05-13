@@ -16,10 +16,12 @@ cursor-text = cell-background
 mouse-hide-while-typing
 background-opacity = 0.95
 background-blur = true
+split-divider-color = #366381
 #initial-command = /bin/zsh -i -c "tmux attach -t local || tmux new -s local \\; new-window \\; new-window \\; new-window \\; select-window -t 3 \\; split-window -h \\; select-pane -t 1 \\; split-window -v \\;"
 notify-on-command-finish = unfocused
 notify-on-command-finish-action = no-bell,notify
 link-url = true
+maximize = true
 keybind = global:ctrl+escape=toggle_quick_terminal
 keybind = global:ctrl+`=toggle_quick_terminal
 #keybind = cmd+shift+l=text:sh -c "tmux attach -t local || tmux new -s local \\; new-window \\; new-window \\; new-window \\; select-window -t 3 \\; split-window -h \\; select-pane -t 1 \\; split-window -v \\;"\n
@@ -78,6 +80,7 @@ window-padding-x = 8
 window-title-font-family = "Geist"
 window-theme = auto
 window-colorspace = display-p3
+window-save-state = always
 clipboard-read = allow
 clipboard-write = allow
 copy-on-select = clipboard
@@ -93,7 +96,9 @@ shell-integration-features = ssh-terminfo,ssh-env,no-cursor
 #custom-shader = /Users/cjones/Code/github/chrisintheshell/ghostty-shaders/smooth_cursor_movement.glsl
 bell-features = no-attention
 macos-titlebar-style = transparent
+macos-option-as-alt = left
 macos-auto-secure-input = true
+#macos-hidden = always
 macos-secure-input-indication = true
 macos-shortcuts = ask
 auto-update = check
